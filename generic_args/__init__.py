@@ -1,0 +1,1 @@
+from generic_args.generic_args import generic_type_args
