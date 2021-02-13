@@ -7,12 +7,7 @@
 
 Given an instantiated generic class, retrieve the type arguments of itself or its parents.
 
-
-## Features
-
-- Fully typed with annotations and checked with mypy, [PEP561 compatible](https://www.python.org/dev/peps/pep-0561/)
-- Add yours!
-
+The packages solves the problem described at [this StackOverflow question](https://stackoverflow.com/q/48572831/1245471).
 
 ## Installation
 
@@ -26,10 +21,11 @@ pip install generic-args
 Showcase how your project can be used:
 
 ```python
-from generic_args.generic_args import some_function
+from typing import List
+from generic_args import generic_type_args
 
-print(some_function(3, 4))
-# => 7
+generic_type_args(List[int])
+# (<type 'int'>, )
 ```
 
 ## License

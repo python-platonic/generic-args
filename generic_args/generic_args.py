@@ -22,7 +22,7 @@ def iterate_by_type_parameters(  # type: ignore
     try:
         yield get_args(instance.__orig_class__)   # noqa: WPS609
     except AttributeError:
-        pass
+        pass   # noqa: WPS420
 
     try:
         yield from map(
@@ -30,9 +30,10 @@ def iterate_by_type_parameters(  # type: ignore
             instance.__orig_bases__,  # noqa: WPS609
         )
     except AttributeError:
-        pass
+        pass   # noqa: WPS420
 
-    if instance_args := get_args(instance):
+    instance_args = get_args(instance)
+    if instance_args:
         yield instance_args
 
 
