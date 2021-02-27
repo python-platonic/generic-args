@@ -33,7 +33,13 @@ FAILURE_TESTCASES = [
 ]
 
 
-@pytest.mark.parametrize(('generic_type', 'type_parameters'), GET_ARGS_DOCSTRING_TESTCASES)
+@pytest.mark.parametrize(  # noqa: WPS317
+    (
+        'generic_type',
+        'type_parameters',
+    ),
+    GET_ARGS_DOCSTRING_TESTCASES,
+)
 def test_get_args_docstring(generic_type, type_parameters):
     """Tests for typing.Generic."""
     assert generic_type_args(generic_type) == type_parameters

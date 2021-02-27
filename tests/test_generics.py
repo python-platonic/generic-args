@@ -11,13 +11,13 @@ TESTCASES = [
 ]
 
 
-@pytest.mark.parametrize(['generic_type', 'type_parameters'], TESTCASES)
+@pytest.mark.parametrize(('generic_type', 'type_parameters'), TESTCASES)
 def test_plain_generic(generic_type, type_parameters):
     """Test generic type."""
     assert generic_type_args(generic_type) == type_parameters
 
 
-@pytest.mark.parametrize(['generic_type', 'type_parameters'], TESTCASES)
+@pytest.mark.parametrize(('generic_type', 'type_parameters'), TESTCASES)
 def test_generic_with_inheritance(generic_type, type_parameters):
     """Test inheritance from generic type."""
     subclass_type = types.new_class('SubClass', (generic_type, ), {})
