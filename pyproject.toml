@@ -25,7 +25,7 @@ classifiers = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.10"
+python = ">=3.7,<3.10"
 documented = "^0.1.1"
 typing_inspect = "^0.6.0"
 
