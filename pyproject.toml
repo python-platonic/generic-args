@@ -6,7 +6,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "generic-args"
 description = "Given an instantiated generic class, retrieve the type arguments of itself or its parents."
-version = "0.0.1"
+version = "0.0.2"
 license = "MIT"
 
 authors = []
