@@ -17,7 +17,3 @@ package:
 
 .PHONY: test
 test: lint package unit
-
-.PHONY: format
-format:
-	poetry run isort generic_args tests

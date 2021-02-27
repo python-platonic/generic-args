@@ -1,18 +1,7 @@
-from dataclasses import dataclass
-from typing import Any, Iterator, Tuple, get_args
+from typing import Any, Iterator, Tuple
 
-from documented import DocumentedError
-
-
-@dataclass
-class TypeArgsError(DocumentedError):   # type: ignore
-    """
-    Cannot ascertain type arguments from instance or class.
-
-    Object: {self.instance}
-    """
-
-    instance: Any   # type: ignore
+from generic_args.errors import TypeArgsError
+from generic_args.get_args import get_args
 
 
 def iterate_by_type_parameters(  # type: ignore
