@@ -68,4 +68,7 @@ pyflakes = [
 wemake-python-styleguide = [
   # Found approximate constant: 3.1415
   "-WPS446",
+
+  # We describe test cases as lists
+  "-WPS407",
 ]

@@ -7,7 +7,7 @@ from generic_args import TypeArgsError, generic_type_args
 T = TypeVar('T')   # noqa: WPS111
 
 
-SUCCESS_TESTCASES = [   # noqa: WPS407
+GET_ARGS_DOCSTRING_TESTCASES = [
     # Source: typing_inspect.get_args docstring
     (
         Union[int, Union[T, int], str][int],  # type: ignore
@@ -20,10 +20,12 @@ SUCCESS_TESTCASES = [   # noqa: WPS407
 ]
 
 
-FAILURE_TESTCASES = [   # noqa: WPS407
+FAILURE_TESTCASES = [
     int,
     str,
+    object,
 
+    object(),
     5,
     3.1415,
     'foo',
@@ -31,8 +33,8 @@ FAILURE_TESTCASES = [   # noqa: WPS407
 ]
 
 
-@pytest.mark.parametrize(('generic_type', 'type_parameters'), SUCCESS_TESTCASES)
-def test_success(generic_type, type_parameters):
+@pytest.mark.parametrize(('generic_type', 'type_parameters'), GET_ARGS_DOCSTRING_TESTCASES)
+def test_get_args_docstring(generic_type, type_parameters):
     """Tests for typing.Generic."""
     assert generic_type_args(generic_type) == type_parameters
 
