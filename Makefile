@@ -2,8 +2,7 @@ SHELL:=/usr/bin/env bash
 
 .PHONY: lint
 lint:
-	poetry run mypy generic_args tests
-	poetry run flakehell lint generic_args tests
+	poetry run jeeves lint
 
 .PHONY: unit
 unit:
@@ -17,7 +16,3 @@ package:
 
 .PHONY: test
 test: lint package unit
-
-.PHONY: format
-format:
-	poetry run isort generic_args tests

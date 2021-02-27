@@ -196,3 +196,7 @@ crashlytics-build.properties
 fabric.properties
 
 .idea
+
+# Unfortunately, we catch a problem if we keep poetry.lock in repo:
+# https://github.com/python-poetry/poetry/issues/1487
+poetry.lock
