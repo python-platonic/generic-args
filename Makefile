@@ -3,7 +3,7 @@ SHELL:=/usr/bin/env bash
 .PHONY: lint
 lint:
 	poetry run mypy generic_args tests
-	poetry run flakehell lint generic_args tests
+	flakehell lint generic_args tests
 
 .PHONY: unit
 unit:

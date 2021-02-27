@@ -27,6 +27,9 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.7,<3.10"
 documented = "^0.1.1"
+
+# We only need this on Python < 3.8, but we have to install it anyway because
+# otherwise we can't get mypy to run normally. Perhaps we need to optimize that.
 typing_inspect = "^0.6.0"
 
 [tool.poetry.dev-dependencies]
